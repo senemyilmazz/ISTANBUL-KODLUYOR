@@ -5,6 +5,7 @@ import com.tobeto.a.spring.rentacar.services.dtos.brand.requests.DeleteBrandRequ
 import com.tobeto.a.spring.rentacar.services.dtos.brand.requests.UpdateBrandRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 
+
 public interface BrandService {
 	void add(@RequestBody AddBrandRequest request);
 	void delete(@RequestBody DeleteBrandRequest request);
