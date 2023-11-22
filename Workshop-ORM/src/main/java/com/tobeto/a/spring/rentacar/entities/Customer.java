@@ -1,11 +1,16 @@
 package com.tobeto.a.spring.rentacar.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Table (name = "customers")
 @Entity
+@Getter
+@Setter
 public class Customer {
 	@Id
 	@Column(name = "id")
@@ -22,7 +27,7 @@ public class Customer {
 	private String phone;
 
 	@Column(name = "address")
-	private String aaddress;
+	private String address;
 
 	@Column(name = "city")
 	private String city;
@@ -34,5 +39,6 @@ public class Customer {
 	private String citizenship_id;
 
 	@OneToMany(mappedBy = "customer")
+	@JsonIgnore
 	private List<Rental> rentals;
 }

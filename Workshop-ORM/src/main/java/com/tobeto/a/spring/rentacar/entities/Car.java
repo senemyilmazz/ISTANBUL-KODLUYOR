@@ -3,12 +3,17 @@ package com.tobeto.a.spring.rentacar.entities;
 //ORM>object relation mapping obje ve veri tabanı ilişkisini sağlar. Bu bir paket türürdür.
 //JPA paketini kullanıyoruz bunun için.
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Table(name = "cars")
 @Entity
+@Getter
+@Setter
 public class Car
 {
 	@Id
@@ -30,6 +35,8 @@ public class Car
 	private Brand brand;
 
 	@OneToMany(mappedBy = "car")
+	@JsonIgnore
 	private List<RentalDetail> rental_detail;
+
 }
 

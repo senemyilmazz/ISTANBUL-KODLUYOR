@@ -1,11 +1,16 @@
 package com.tobeto.a.spring.rentacar.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Table(name = "brands")
 @Entity
+@Getter
+@Setter
 public class Brand {
 
 	@Id
@@ -29,5 +34,6 @@ public class Brand {
 	private String transmission;
 
 	@OneToMany(mappedBy = "brand")
+	@JsonIgnore
 	private List<Car> cars;
 }
