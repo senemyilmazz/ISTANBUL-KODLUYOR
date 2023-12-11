@@ -20,13 +20,13 @@ public class CustomerManager implements CustomerService {
 	public void add(AddCustomerRequest request) {
 
 		Customer customer = new Customer();
-		customer.setFirst_name(request.getFirst_name());
-		customer.setLast_name(request.getLast_name());
+		customer.setFirstName(request.getFirst_name());
+		customer.setLastName(request.getLast_name());
 		customer.setPhone(request.getPhone());
 		customer.setAddress(request.getAddress());
 		customer.setCity(request.getCity());
 		customer.setCountry(request.getCountry());
-		customer.setCitizenship_id(request.getCitizenship_id());
+		customer.setCitizenshipId(request.getCitizenship_id());
 		customerRepository.save(customer);
 	}
 
@@ -39,7 +39,7 @@ public class CustomerManager implements CustomerService {
 	@Override
 	public void update(UpdateCustomerRequest request) {
 		Customer customerToUpdate = customerRepository.findById(request.getId()).orElseThrow();
-		customerToUpdate.setLast_name(request.getLast_Name());
+		customerToUpdate.setLastName(request.getLast_Name());
 		customerToUpdate.setPhone(request.getPhone());
 		customerToUpdate.setAddress(request.getAddress());
 		customerToUpdate.setCity(request.getCity());

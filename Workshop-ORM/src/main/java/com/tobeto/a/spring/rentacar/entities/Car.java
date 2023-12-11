@@ -22,13 +22,13 @@ public class Car
 	private Integer id;
 
 	@Column(name = "licence_plate")
-	private String licence_plate;
+	private String licencePlate;
 
 	@Column(name = "daily_price")
-	private float daily_price;
+	private float dailyPrice;
 
 	@Column(name = "weekly_price")
-	private float weekly_price;
+	private float weeklyPrice;
 
 	@ManyToOne
 	@JoinColumn(name = "brand_id")

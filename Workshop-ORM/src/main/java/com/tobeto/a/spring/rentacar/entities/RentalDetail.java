@@ -17,17 +17,17 @@ public class RentalDetail {
 	private Integer id;
 
 	@Column(name = "rental_date")
-	private Date rental_date;
+	private Date rentalDate;
 
 	@Column(name = "delivery_date")
-	private Date delivery_date;
+	private Date deliveryDate;
 
 	@ManyToOne
-	@JoinColumn(name = "rental_id")
+	@JoinColumn(name = "rentalId")
 	private Rental rental;
 
 	@ManyToOne
-	@JoinColumn(name = "car_id")
+	@JoinColumn(name = "carId")
 	private Car car;
 
 }

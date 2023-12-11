@@ -30,8 +30,8 @@ public class RentalDetailManager implements RentalDetailService {
 		Rental rental = rentalRepository.findById(request.getRental_id()).orElseThrow();
 		Car car = carRepository.findById(request.getCar_id()).orElseThrow();
 
-		rentalDetail.setRental_date(request.getRental_date());
-		rentalDetail.setDelivery_date(request.getDelivery_date());
+		rentalDetail.setRentalDate(request.getRental_date());
+		rentalDetail.setDeliveryDate(request.getDelivery_date());
 		rentalDetail.setRental(rental);
 		rentalDetail.setCar(car);
 		rentalDetailRepository.save(rentalDetail);
@@ -46,8 +46,8 @@ public class RentalDetailManager implements RentalDetailService {
 	@Override
 	public void update(UpdateRentalDetailRequest request) {
 		RentalDetail rentalDetailToUpdate = rentalDetailRepository.findById(request.getId()).orElseThrow();
-		rentalDetailToUpdate.setRental_date(request.getRental_date());
-		rentalDetailToUpdate.setDelivery_date(request.getDelivery_date());
+		rentalDetailToUpdate.setRentalDate(request.getRental_date());
+		rentalDetailToUpdate.setDeliveryDate(request.getDelivery_date());
 		rentalDetailRepository.save(rentalDetailToUpdate);
 	}
 }

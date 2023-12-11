@@ -19,16 +19,16 @@ public class Brand {
 	private Integer id;
 
 	@Column(name = "brand_name")
-	private String brand_name;
+	private String brandName;
 
 	@Column (name = "model_name")
-	private String model_name;
+	private String modelName;
 
 	@Column (name= "model_year")
-	private Short model_year;
+	private Short modelYear;
 
 	@Column (name = "fuel_type")
-	private String fuel_type;
+	private String fuelType;
 
 	@Column (name= "transmission")
 	private String transmission;

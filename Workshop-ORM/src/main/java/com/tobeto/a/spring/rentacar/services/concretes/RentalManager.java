@@ -26,8 +26,8 @@ public class RentalManager implements RentalService {
 		Rental rental = new Rental();
 		Customer customer = customerRepository.findById(request.getCustomer_id()).orElseThrow();
 
-		rental.setPayment_method(request.getPayment_method());
-		rental.setPayment_method(request.getPayment_method());
+		rental.setPaymentMethod(request.getPayment_method());
+		rental.setPaymentMethod(request.getPayment_method());
 		rental.setCustomer(customer);
 		rentalRepository.save(rental);
 	}

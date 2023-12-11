@@ -18,10 +18,10 @@ public class Rental {
 	private Integer id;
 
 	@Column(name = "total_price")
-	private float total_price;
+	private float totalPrice;
 
 	@Column (name = "payment_method")
-	private String payment_method;
+	private String paymentMethod;
 
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
@@ -29,7 +29,7 @@ public class Rental {
 
 	@OneToMany(mappedBy = "rental")
 	@JsonIgnore
-	private List<RentalDetail> rental_detail;
+	private List<RentalDetail> rentalDetail;
 
 
 }
